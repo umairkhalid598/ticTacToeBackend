@@ -1,0 +1,11 @@
+.idea
+.env
+
+/node_modules/
+/client/node_modules/
+/build/
+
+/dist/
+/client/dist/
+stacktrace.log
+yarn-error.log
