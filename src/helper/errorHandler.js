@@ -1,6 +1,6 @@
 module.exports = (err, req, res) => {
     const status = err.status ? err.status : err.code;
-
+    console.log(err.name)
     if (typeof (err) === "string") {
         // custom application error
         return res.status(400)
@@ -15,6 +15,11 @@ module.exports = (err, req, res) => {
     if (err.name === "IllegalArgumentException") {
         return res.status(422)
             .json({ status: 422, errors: [{ msg: err.message }] });
+    }
+
+    if (err.name === "PageNotFound") {
+        return res.status(404)
+            .json({ status: 404, msg: err.message });
     }
     if (err.errors && err.errors.length) {
         const errors = err.errors.map(error => ({

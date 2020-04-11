@@ -9,3 +9,4 @@
 /client/dist/
 stacktrace.log
 yarn-error.log
+db.json

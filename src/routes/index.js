@@ -1,5 +1,5 @@
-const ticTacToe = require("./ticTacToe");
+const v1 = require("./v1");
 
 module.exports = (app) => {
-    ticTacToe(app);
+    v1(app, "/api/v1");
 };
